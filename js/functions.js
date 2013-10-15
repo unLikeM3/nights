@@ -9,6 +9,7 @@ var bioBtn;
 var concertsBtn;
 var contactBtn;
 var page;
+var closePage;
 
 $(document).ready(function(){
 	musicPage = $('#musicPage');
@@ -22,54 +23,61 @@ $(document).ready(function(){
 	concertsBtn = $('#concerts');
 	contactBtn = $('#contact');
 	page = $('.page');
+	closePage = $('#closePage');
 
 	musicBtn.click(function(){
-		page.slideUp("fast");
-
 		if(musicPage.is(":visible")){
-			page.slideUp("fast");
+
 		}else{
+			page.slideUp("fast");
 			musicPage.slideDown("fast");
+			closePage.show();
 		}
 	});
 
 	videoBtn.click(function(){
-		page.slideUp("fast");
-
 		if(videoPage.is(":visible")){
-			page.slideUp("fast");
+
 		}else{
+			page.slideUp("fast");
 			videoPage.slideDown("fast");
+			closePage.show();
 		}
 	});
 
 	bioBtn.click(function(){
-		page.slideUp("fast");
-
 		if(bioPage.is(":visible")){
-			page.slideUp("fast");
+
 		}else{
+			page.slideUp("fast");
 			bioPage.slideDown("fast");
+			closePage.show();
 		}
 	});
 
 	concertsBtn.click(function(){
-		page.slideUp("fast");
-
 		if(concertsPage.is(":visible")){
-			page.slideUp("fast");
+
 		}else{
+			page.slideUp("fast");
 			concertsPage.slideDown("fast");
+			closePage.show();
 		}
 	});
 
 	contactBtn.click(function(){
-		page.slideUp("fast");
-
 		if(contactPage.is(":visible")){
-			page.slideUp("fast");
+
 		}else{
+			page.slideUp("fast");
 			contactPage.slideDown("fast");
+			closePage.show();
 		}
 	});
+
+	closePage.click(function(){
+		page.slideUp("fast");
+		closePage.hide();
+	});
+
 });
