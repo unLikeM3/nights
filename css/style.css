@@ -1,0 +1,93 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+body{
+	background: url("../img/bg.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/* ID's */
+#wrapper{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	font-family: Open-sans, Helvetica;
+}
+
+/* PANELS */
+#title{
+	top: 0;
+	left: 0;
+}
+#music{
+	top: 0;
+	left: 33%;
+	width: 34%;
+}
+#video{
+	top: 0;
+	right: 0; 
+}
+#bio{
+	top: 50%;
+	left: 0;
+}
+#concerts{
+	top: 50%;
+	left: 33%;
+	width: 34%;
+}
+#contact{
+	top: 50%;
+	right: 0; 
+}
+
+/* CLASSES */
+.row{
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.panel{
+	width: 33%;
+	height: 50%;
+	float: left;
+	color: #fff;
+	text-align: center;
+	position: absolute;
+	opacity: 0.1;
+}
+.panel:hover{
+	opacity: 1;
+}
+.panel h1{
+	font-size: 4em;
+}
+.panelText{
+	width: 100%;
+	height: 40%;
+	overflow: hidden;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+}
+.titlePanel{
+	opacity: 1;
+	background: #333;
+}
+/* PAGES */
+.page{
+	position: fixed;
+	top: 5%;
+	height: 90%;
+	width: 90%;
+	left: 5%;
+	background: rgba(255,255,255, 0.9);
+	display: none;
+	padding: 20px;
+}
