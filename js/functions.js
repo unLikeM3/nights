@@ -32,6 +32,7 @@ $(document).ready(function(){
 			page.slideUp("fast");
 			musicPage.slideDown("fast");
 			closePage.show();
+			$('#musicPage').load('data.html #music');
 		}
 	});
 
@@ -42,6 +43,8 @@ $(document).ready(function(){
 			page.slideUp("fast");
 			videoPage.slideDown("fast");
 			closePage.show();
+
+			$('#videoPage').load('data.html #video');
 		}
 	});
 
@@ -52,6 +55,7 @@ $(document).ready(function(){
 			page.slideUp("fast");
 			bioPage.slideDown("fast");
 			closePage.show();
+			$('#bioPage').load('data.html #bio');
 		}
 	});
 
@@ -62,6 +66,8 @@ $(document).ready(function(){
 			page.slideUp("fast");
 			concertsPage.slideDown("fast");
 			closePage.show();
+			$('#concertsPage').load('data.html #concerts');
+
 		}
 	});
 
@@ -72,6 +78,7 @@ $(document).ready(function(){
 			page.slideUp("fast");
 			contactPage.slideDown("fast");
 			closePage.show();
+			$('#contactPage').load('data.html #contact');
 		}
 	});
 
@@ -92,9 +99,11 @@ $(document).ready(function(){
 	}, function(){
 		/* Exit panel */
 		$(this).animate({
-			'opacity': '0.4',
-			'background-color': 'rgba(0,0,0,0)'
+			'opacity': '0.4'
 		}, 200);
+		$(this).css({
+			'background-color': 'rgba(0,0,0,0)'
+		});
 	});
 
 });

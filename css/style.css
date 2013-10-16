@@ -22,7 +22,7 @@ body{
 #title{
 	top: 0;
 	left: 0;
-	background:rgba(0,0,0,0);
+	background:rgba(255,200,0,0.1);
 	width: 33%;
 	height: 50%;
 	float: left;
@@ -96,8 +96,7 @@ body{
 	text-align: center;
 	position: absolute;
 	opacity: 0.4;
-}
-.panel:hover{
+	cursor: pointer;
 }
 .panel h1{
 	font-size: 4em;
@@ -113,6 +112,7 @@ body{
 .titlePanel{
 	opacity: 1;
 }
+
 /* PAGES */
 .page{
 	position: fixed;
@@ -120,11 +120,22 @@ body{
 	height: 90%;
 	width: 90%;
 	left: 5%;
-	background: rgba(255,255,255, 0.9);
+	background: rgba(40,40,40, 0.9);
 	display: none;
 	padding: 20px;
 	padding-top: 0px;
-	overflow: scroll;
+	overflow: auto;
+}
+.pageContent{
+	width: 90%;
+	margin: 0 auto;
+	padding: 20px;
+}
+.pageContent iframe{
+	margin: 0 auto;
+	width: 960px;
+	height: 540px;
+	margin-bottom: 20px;
 }
 
 @media(max-width: 1300px){
