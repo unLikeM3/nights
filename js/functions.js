@@ -66,8 +66,6 @@ $(document).ready(function(){
 			page.slideUp("fast");
 			concertsPage.slideDown("fast");
 			closePage.show();
-			$('#concertsPage').load('data.html #concerts');
-
 		}
 	});
 
