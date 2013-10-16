@@ -80,4 +80,21 @@ $(document).ready(function(){
 		closePage.hide();
 	});
 
+	$(".panel").hover(function(){
+		/* Enter panel */
+		$(this).animate({
+			'opacity': '1',
+		}, 500);
+		$(this).css({
+			'background-color': 'rgba(0,0,0,0.4)'
+		});
+
+	}, function(){
+		/* Exit panel */
+		$(this).animate({
+			'opacity': '0.4',
+			'background-color': 'rgba(0,0,0,0)'
+		}, 200);
+	});
+
 });
