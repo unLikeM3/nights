@@ -1,8 +1,4 @@
-var musicPage;
-var videoPage;
-var bioPage;
-var concertsPage;
-var contactPage;
+var content;
 var musicBtn;
 var videoBtn;
 var bioBtn;
@@ -12,17 +8,12 @@ var page;
 var closePage;
 
 $(document).ready(function(){
-	musicPage = $('#musicPage');
-	videoPage = $('#videoPage');
-	bioPage = $('#bioPage');
-	concertsPage = $('#concertsPage');
-	contactPage = $('#contactPage');
+	content = $('#content');
 	musicBtn = $('#music');
 	videoBtn = $('#video');
 	bioBtn = $('#bio');
 	concertsBtn = $('#concerts');
 	contactBtn = $('#contact');
-	page = $('.page');
 	closePage = $('#closePage');
 
 	musicBtn.click(function(){
