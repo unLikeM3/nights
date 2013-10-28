@@ -1,85 +1,23 @@
 var content;
-var musicBtn;
-var videoBtn;
-var bioBtn;
-var concertsBtn;
-var contactBtn;
-var page;
-var closePage;
 
 $(document).ready(function(){
-	content = $('#content');
-	musicBtn = $('#music');
-	videoBtn = $('#video');
-	bioBtn = $('#bio');
-	concertsBtn = $('#concerts');
-	contactBtn = $('#contact');
-	closePage = $('#closePage');
+	content = $('#contentBox');
 
-	musicBtn.click(function(){
-		if(musicPage.is(":visible")){
+	$('.panel').click(function(){
+		$('#content').css({
+			'top': '95%'
+		});
+		$('#content').animate({
+			'top': '0px'
+		},1000);
 
-		}else{
-			page.slideUp("fast");
-			musicPage.slideDown("fast");
-			closePage.show();
-			$('#musicPage').load('data.html #music');
-		}
-	});
-
-	videoBtn.click(function(){
-		if(videoPage.is(":visible")){
-
-		}else{
-			page.slideUp("fast");
-			videoPage.slideDown("fast");
-			closePage.show();
-
-			$('#videoPage').load('data.html #video');
-		}
-	});
-
-	bioBtn.click(function(){
-		if(bioPage.is(":visible")){
-
-		}else{
-			page.slideUp("fast");
-			bioPage.slideDown("fast");
-			closePage.show();
-			$('#bioPage').load('data.html #bio');
-		}
-	});
-
-	concertsBtn.click(function(){
-		if(concertsPage.is(":visible")){
-
-		}else{
-			page.slideUp("fast");
-			concertsPage.slideDown("fast");
-			closePage.show();
-		}
-	});
-
-	contactBtn.click(function(){
-		if(contactPage.is(":visible")){
-
-		}else{
-			page.slideUp("fast");
-			contactPage.slideDown("fast");
-			closePage.show();
-			$('#contactPage').load('data.html #contact');
-		}
-	});
-
-	closePage.click(function(){
-		page.slideUp("fast");
-		closePage.hide();
+		content.load("data.html #"+$(this).attr('id')+"load");
 	});
 
 	$(".panel").hover(function(){
 		/* Enter panel */
 		$(this).animate({
-			'opacity': '1',
+			'opacity': '1'
 		}, 500);
 		$(this).css({
 			'background-color': 'rgba(0,0,0,0.4)'
@@ -95,4 +33,17 @@ $(document).ready(function(){
 		});
 	});
 
+	$('.navItem').click(function(){
+		content.load('data.html .'+$(this).attr('id'));
+	});
+
+	$('.navItem').hover(function(){
+		$(this).animate({
+			'font-size': '20px'
+		},200);
+	}, function(){
+		$(this).animate({
+			'font-size': '16px'
+		},200);
+	});
 });
