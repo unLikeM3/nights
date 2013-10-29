@@ -46,4 +46,16 @@ $(document).ready(function(){
 			'font-size': '16px'
 		},200);
 	});
+
+	/* MOBILE NAV */
+	$('#mMenu').click(function(){
+		$('#mDropDown').fadeToggle();
+	});
+
+	$('.mLi').click(function(){
+		$('#mDropDown').fadeOut();
+		var el = $(this).attr('alt');
+		
+		$('#content').animate({scrollTop: $('#'+el).offset().top - 40});
+	});
 });
