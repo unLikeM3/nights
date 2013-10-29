@@ -27,10 +27,10 @@ $(document).ready(function(){
 		/* Exit panel */
 		$(this).animate({
 			'opacity': '0.4'
-		}, 200);
-		$(this).css({
+		}, 500);
+		$(this).animate({
 			'background-color': 'rgba(0,0,0,0)'
-		});
+		}, 500);
 	});
 
 	$('.navItem').click(function(){
