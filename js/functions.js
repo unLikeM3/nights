@@ -11,7 +11,13 @@ $(document).ready(function(){
 			'top': '0px'
 		},1000);
 
-		content.load("data.html #"+$(this).attr('id')+"load");
+		if($(this).attr('id') == 'concerts'){
+			content.load("data.html #"+$(this).attr('id')+"load", function(){
+				$.getScript('https://www.bandsintown.com/javascripts/bit_widget.js');
+			});
+		}else{
+			content.load("data.html #"+$(this).attr('id')+"load");
+		}
 	});
 
 	$(".panel").hover(function(){
@@ -35,6 +41,18 @@ $(document).ready(function(){
 
 	$('.navItem').click(function(){
 		content.load('data.html .'+$(this).attr('id'));
+
+		if($(this).attr('id') == 'nav4'){
+			content.load('data.html .'+$(this).attr('id'), function(){
+				$.getScript('https://www.bandsintown.com/javascripts/bit_widget.js');
+			});
+		}else if($(this).attr('id') == 'nav1'){
+			$('#content').animate({
+				'top': '105%'
+			}, 1000);
+		}else{
+			content.load('data.html .'+$(this).attr('id'));
+		}
 	});
 
 	$('.navItem').hover(function(){
