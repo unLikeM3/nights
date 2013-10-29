@@ -54,8 +54,9 @@ $(document).ready(function(){
 
 	$('.mLi').click(function(){
 		$('#mDropDown').fadeOut();
-		var el = $(this).attr('alt');
+		var el = $('#' + $(this).attr('alt'));
+
+		$('#content').scrollTo(el, {duration: 1000, offset: -40});
 		
-		$('#content').animate({scrollTop: $('#'+el).offset().top - 40});
 	});
 });
