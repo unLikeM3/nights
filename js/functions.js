@@ -4,20 +4,24 @@ $(document).ready(function(){
 	content = $('#contentBox');
 
 	$('.panel').click(function(){
+		var self = $(this);
+		content.html("<center><img src='img/spinner.gif' /></center>");
 		$('#content').css({
 			'top': '95%'
 		});
 		$('#content').animate({
 			'top': '0px'
-		},1000);
+		},1000, function(){
+			if(self.attr('id') == 'concerts'){
+				content.load("data.html #"+self.attr('id')+"load", function(){
+					$.getScript('https://www.bandsintown.com/javascripts/bit_widget.js');
+				});
+			}else{
+				content.load("data.html #"+self.attr('id')+"load");
+			}
+		});
 
-		if($(this).attr('id') == 'concerts'){
-			content.load("data.html #"+$(this).attr('id')+"load", function(){
-				$.getScript('https://www.bandsintown.com/javascripts/bit_widget.js');
-			});
-		}else{
-			content.load("data.html #"+$(this).attr('id')+"load");
-		}
+		
 	});
 
 	$(".panel").hover(function(){
@@ -40,6 +44,7 @@ $(document).ready(function(){
 	});
 
 	$('.navItem').click(function(){
+		content.html("<center><img src='img/spinner.gif' /></center>");
 		content.load('data.html .'+$(this).attr('id'));
 
 		if($(this).attr('id') == 'nav4'){
@@ -50,6 +55,8 @@ $(document).ready(function(){
 			$('#content').animate({
 				'top': '105%'
 			}, 1000);
+		}else if($(this).attr('id') == 'closeBtn'){
+
 		}else{
 			content.load('data.html .'+$(this).attr('id'));
 		}
@@ -63,6 +70,12 @@ $(document).ready(function(){
 		$(this).animate({
 			'font-size': '16px'
 		},200);
+	});
+
+	$('#closeBtn').click(function(){
+		$('#content').animate({
+			'top': '105%'
+		}, 1000);
 	});
 
 	/* MOBILE NAV */
