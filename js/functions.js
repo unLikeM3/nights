@@ -2,6 +2,7 @@ var content;
 
 $(document).ready(function(){
 	content = $('#contentBox');
+	console.log($(location).attr('hash').toLowerCase());
 
 	$('.panel').click(function(){
 		var self = $(this);
@@ -20,9 +21,28 @@ $(document).ready(function(){
 				content.load("data.html #"+self.attr('id')+"load");
 			}
 		});
-
-		
 	});
+
+	if($(window).width() > 800 && $(location).attr('hash') != "" && parseInt($('#content').css('top')) > 20){
+		console.log('Hash');
+		content.html("<center><img src='img/spinner.gif' /></center>");
+		$('#content').css({
+			'top': '95%'
+		});
+		$('#content').animate({
+			'top': '0px'
+		},1000, function(){
+			if($(location).attr('hash') == '#concerts'){
+				content.load("data.html "+$(location).attr('hash')+"load", function(){
+					$.getScript('https://www.bandsintown.com/javascripts/bit_widget.js');
+				});
+			}else{
+				content.load("data.html "+$(location).attr('hash')+"load");
+			}
+		});
+	}else{
+		console.log('No hash');
+	}
 
 	$(".panel").hover(function(){
 		/* Enter panel */

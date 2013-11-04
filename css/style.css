@@ -144,8 +144,12 @@ a{
 	position: absolute;
 	left: 3%;
 	float: left;
-	top:5px;
+	top:2px;
 	cursor: pointer;
+	font-size: 13px;
+}
+#closeBtn:hover{
+	text-decoration: underline;
 }
 
 
